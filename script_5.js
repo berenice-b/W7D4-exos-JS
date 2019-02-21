@@ -32,6 +32,17 @@ myBigHash.getKey = function(value) {
 };
 console.log("La cryptomonnaie qui a la plus grosse valeur est " + myBigHash.getKey("$46183.20"));
 
+/////////////// 2. La crypto qui a la plus petite valeur
+let min = 1000000;
+     let cryptoMinName;
+     mynewarray.forEach(handle => {
+       if (handle < 46183.20) {
+         min = handle;
+         cryptoMinName = handle;
+       }
+     })
+     console.log("La crypto à la plus petite valeur est à " + min);
+
 /////////////// 3. Le nombre de crypto contenant le mot coin
 let coinCount = 0;
      keys.forEach(handle => {
@@ -40,3 +51,23 @@ let coinCount = 0;
        }
      })
 console.log(coinCount + " crpytomonnaies contiennent le substring coin");
+
+/////////////// 4. Devises dont le cours est inférieur à 6000
+let below6000 = 0;
+     mynewarray.forEach(handle => {
+       if (handle < 6000) {
+         below6000 ++;
+       }
+     })
+     console.log(below6000 + " cryptomonnaies dont le cours est inférieur à 6000");
+
+/////////////// 5. Devise la plus chère dont le cours est inférieur à 6000
+let max6000 = 0;
+let cryptoMax6000Name;
+mynewarray.forEach(handle => {
+    if (handle < 6000 && handle > max6000) {
+        max6000 = handle;
+        cryptoMax6000Name = handle;
+       }
+})
+console.log(max6000 + " la devise la plus chère parmi les cryptomonnaies dont le cours est inférieur à 6000");
